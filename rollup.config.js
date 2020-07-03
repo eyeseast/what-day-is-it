@@ -13,15 +13,15 @@ export default {
   output: {
     file: "public/bundle.js",
     format: "iife", // immediately-invoked function expression — suitable for <script> tags
-    sourcemap: true,
+    sourcemap: true
   },
   plugins: [
     resolve(), // tells Rollup how to find date-fns in node_modules
     commonjs(), // converts date-fns to ES modules
     json(),
     replace({
-      "process.env.GIPHY_API_KEY": JSON.stringify(process.env.GIPHY_API_KEY),
+      "process.env.GIPHY_API_KEY": JSON.stringify(process.env.GIPHY_API_KEY)
     }),
-    production && terser(), // minify, but only in production
-  ],
+    production && terser() // minify, but only in production
+  ]
 };
