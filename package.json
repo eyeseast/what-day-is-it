@@ -1,5 +1,8 @@
 {
   "name": "what-day-is-it",
+  "engines": {
+    "node": "14"
+  },
   "devDependencies": {
     "@giphy/js-fetch-api": "^1.6.0",
     "@rollup/plugin-commonjs": "^11.0.1",
@@ -15,6 +18,7 @@
     "build": "rollup -c",
     "watch": "rollup -c -w",
     "dev": "npm-run-all --parallel start watch",
-    "start": "serve public"
+    "serve": "serve public",
+    "start": "run-s build serve"
   }
 }
